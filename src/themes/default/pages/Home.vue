@@ -30,6 +30,24 @@
         </div>
         <tile-links />
     </section>
+
+    <section v-if="isOnline" class="container pb60 px15">
+        <div class="row center-xs">
+            <header class="col-md-12" :class="{ pt40: getEverythingNewCollection && getEverythingNewCollection.length }">
+                <h2 class="align-center cl-accent">
+                    {{ $t('Emdad Todo List') }}
+                </h2>
+            </header>
+        </div>
+
+        <!-- New code start -->
+
+        <emdad-products />
+
+        <!-- New code end -->
+
+    </section>
+
     <Onboard />
 </div>
 </template>
@@ -49,6 +67,8 @@ import HeadImage from 'theme/components/core/blocks/MainSlider/HeadImage'
 import Onboard from 'theme/components/theme/blocks/Home/Onboard'
 import PromotedOffers from 'theme/components/theme/blocks/PromotedOffers/PromotedOffers'
 import TileLinks from 'theme/components/theme/blocks/TileLinks/TileLinks'
+import EmdadProducts from 'theme/components/theme/blocks/EmdadProducts/EmdadProducts'
+
 import {
     Logger
 } from '@vue-storefront/core/lib/logger'
@@ -75,6 +95,7 @@ export default {
         ProductListing,
         PromotedOffers,
         TileLinks,
+        EmdadProducts,
         LazyHydrate
     },
     computed: {
