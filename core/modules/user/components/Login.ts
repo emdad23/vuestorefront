@@ -19,8 +19,9 @@ export const Login = {
         if (result.code !== 200) {
           this.onFailure(result)
         } else {
-          this.onSuccess()
-          this.close()
+          // this.onSuccess()
+          // this.close()
+          this.otpForm()
         }
       }).catch(err => {
         Logger.error(err, 'user')()
@@ -36,6 +37,10 @@ export const Login = {
     callForgotPassword () {
       // TODO Move to theme
       this.$store.commit('ui/setAuthElem', 'forgot-pass')
-    }
+    },
+    otpForm () {
+      // TODO Move to theme
+      this.$store.commit('ui/setAuthElem', 'otp')
+    },
   }
 }

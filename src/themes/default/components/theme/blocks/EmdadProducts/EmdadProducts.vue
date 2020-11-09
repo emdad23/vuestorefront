@@ -27,7 +27,7 @@
                 <div class="price text-success">
                     <h5 class="mt-4">$125</h5>
                 </div>
-                <button class="button-outline no-outline py15 bg-cl-transparent h4 no-underline sans-serif fs-medium dark brdr-darkgray cl-secondary px40"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                <button v-on:click="warn('Form cannot be submitted yet.', $event)" class="button-outline no-outline py15 bg-cl-transparent h4 no-underline sans-serif fs-medium dark brdr-darkgray cl-secondary px40"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
         </div>
     </div>
@@ -64,6 +64,15 @@ export default {
                     alt: 'Man practicing on the beach'
                 },
             ]
+        }
+    },
+    methods: {
+        warn: function (message, event) {
+            // now we have access to the native event
+            if (event) {
+                event.preventDefault()
+            }
+            alert(message)
         }
     }
 }

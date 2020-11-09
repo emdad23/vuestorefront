@@ -3,6 +3,7 @@
     <login v-if="activeElem === 'login'" />
     <register v-if="activeElem === 'register'" />
     <forgot-pass v-if="activeElem === 'forgot-pass'" />
+    <otp v-if="activeElem === 'otp'" />
   </modal>
 </template>
 
@@ -12,6 +13,7 @@ import Modal from 'theme/components/core/Modal'
 import Login from 'theme/components/core/blocks/Auth/Login'
 import Register from 'theme/components/core/blocks/Auth/Register'
 import ForgotPass from 'theme/components/core/blocks/Auth/ForgotPass'
+import Otp from 'theme/components/core/blocks/Auth/Otp'
 
 export default {
   name: 'SignUp',
@@ -24,7 +26,8 @@ export default {
     Modal,
     Login,
     Register,
-    ForgotPass
+    ForgotPass,
+    Otp
   }
 }
 </script>
